@@ -1,15 +1,13 @@
 const express = require("express");
 const app = express();
 
-// PORTA CORRETA (IMPORTANTE PARA RAILWAY)
-const port = process.env.PORT || 3000;
+// IMPORTANTE PRA RAILWAY
+const port = process.env.PORT;
 
-// ROTA PRINCIPAL
 app.get("/", (req, res) => {
   res.send("Servidor rodando 🚀");
 });
 
-// INICIAR SERVIDOR
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
